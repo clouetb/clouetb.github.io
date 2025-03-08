@@ -1,0 +1,4 @@
+Sitemap: https://blog.bclouet.eu/sitemapindex.xml
+
+User-Agent: *
+Host: blog.bclouet.eu

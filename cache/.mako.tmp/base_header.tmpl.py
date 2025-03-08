@@ -1,0 +1,218 @@
+# -*- coding:utf-8 -*-
+from mako import runtime, filters, cache
+UNDEFINED = runtime.UNDEFINED
+STOP_RENDERING = runtime.STOP_RENDERING
+__M_dict_builtin = dict
+__M_locals_builtin = locals
+_magic_number = 10
+_modified_time = 1741477172.288379
+_enable_loop = True
+_template_filename = '/Users/benoitclouet/.local/pipx/venvs/nikola/lib/python3.13/site-packages/nikola/data/themes/base/templates/base_header.tmpl'
+_template_uri = 'base_header.tmpl'
+_source_encoding = 'utf-8'
+_exports = ['html_header', 'html_site_title', 'html_navigation_links', 'html_navigation_links_entries', 'html_translation_header']
+
+
+def _mako_get_namespace(context, name):
+    try:
+        return context.namespaces[(__name__, name)]
+    except KeyError:
+        _mako_generate_namespaces(context)
+        return context.namespaces[(__name__, name)]
+def _mako_generate_namespaces(context):
+    ns = runtime.TemplateNamespace('base', context._clean_inheritance_tokens(), templateuri='base_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'base')] = ns
+
+def render_body(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_locals = __M_dict_builtin(pageargs=pageargs)
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        __M_writer = context.writer()
+        __M_writer('\n\n')
+        __M_writer('\n\n')
+        __M_writer('\n\n')
+        __M_writer('\n\n')
+        __M_writer('\n\n')
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_html_header(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        def html_translation_header():
+            return render_html_translation_header(context)
+        search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
+        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        def html_site_title():
+            return render_html_site_title(context)
+        def html_navigation_links():
+            return render_html_navigation_links(context)
+        __M_writer = context.writer()
+        __M_writer('\n    <header id="header">\n        ')
+        __M_writer(str(html_site_title()))
+        __M_writer('\n        ')
+        __M_writer(str(html_translation_header()))
+        __M_writer('\n        ')
+        __M_writer(str(html_navigation_links()))
+        __M_writer('\n')
+        if search_form:
+            __M_writer('            <div class="searchform" role="search">\n                ')
+            __M_writer(str(search_form))
+            __M_writer('\n            </div>\n')
+        __M_writer('    </header>\n    ')
+        __M_writer(str(template_hooks['page_header']()))
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_html_site_title(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        logo_url = _import_ns.get('logo_url', context.get('logo_url', UNDEFINED))
+        show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
+        _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
+        __M_writer = context.writer()
+        __M_writer('\n    <h1 id="brand"><a href="')
+        __M_writer(str(_link("root", None, lang)))
+        __M_writer('" title="')
+        __M_writer(filters.html_escape(str(blog_title)))
+        __M_writer('" rel="home">\n')
+        if logo_url:
+            __M_writer('        <img src="')
+            __M_writer(str(logo_url))
+            __M_writer('" alt="')
+            __M_writer(filters.html_escape(str(blog_title)))
+            __M_writer('" id="logo">\n')
+        __M_writer('\n')
+        if show_blog_title:
+            __M_writer('        <span id="blog-title">')
+            __M_writer(filters.html_escape(str(blog_title)))
+            __M_writer('</span>\n')
+        __M_writer('    </a></h1>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_html_navigation_links(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
+        def html_navigation_links_entries(navigation_links_source):
+            return render_html_navigation_links_entries(context,navigation_links_source)
+        navigation_alt_links = _import_ns.get('navigation_alt_links', context.get('navigation_alt_links', UNDEFINED))
+        __M_writer = context.writer()
+        __M_writer('\n    <nav id="menu">\n    <ul>\n    ')
+        __M_writer(str(html_navigation_links_entries(navigation_links)))
+        __M_writer('\n    ')
+        __M_writer(str(html_navigation_links_entries(navigation_alt_links)))
+        __M_writer('\n    ')
+        __M_writer(str(template_hooks['menu']()))
+        __M_writer('\n    ')
+        __M_writer(str(template_hooks['menu_alt']()))
+        __M_writer('\n    </ul>\n    </nav>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_html_navigation_links_entries(context,navigation_links_source):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        isinstance = _import_ns.get('isinstance', context.get('isinstance', UNDEFINED))
+        rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        tuple = _import_ns.get('tuple', context.get('tuple', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        __M_writer = context.writer()
+        __M_writer('\n')
+        for url, text in navigation_links_source[lang]:
+            pass
+            if isinstance(url, tuple):
+                __M_writer('            <li> ')
+                __M_writer(str(text))
+                __M_writer('\n            <ul>\n')
+                for suburl, text in url:
+                    pass
+                    if rel_link(permalink, suburl) == "#":
+                        __M_writer('                    <li class="active"><a href="')
+                        __M_writer(str(permalink))
+                        __M_writer('">')
+                        __M_writer(str(text))
+                        __M_writer('<span class="sr-only"> ')
+                        __M_writer(str(messages("(active)", lang)))
+                        __M_writer('</span></a></li>\n')
+                    else:
+                        __M_writer('                    <li><a href="')
+                        __M_writer(str(suburl))
+                        __M_writer('">')
+                        __M_writer(str(text))
+                        __M_writer('</a></li>\n')
+                __M_writer('            </ul>\n')
+            else:
+                pass
+                if rel_link(permalink, url) == "#":
+                    __M_writer('                <li class="active"><a href="')
+                    __M_writer(str(permalink))
+                    __M_writer('">')
+                    __M_writer(str(text))
+                    __M_writer('<span class="sr-only"> ')
+                    __M_writer(str(messages("(active)", lang)))
+                    __M_writer('</span></a></li>\n')
+                else:
+                    __M_writer('                <li><a href="')
+                    __M_writer(str(url))
+                    __M_writer('">')
+                    __M_writer(str(text))
+                    __M_writer('</a></li>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_html_translation_header(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
+        base = _mako_get_namespace(context, 'base')
+        len = _import_ns.get('len', context.get('len', UNDEFINED))
+        translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if len(translations) > 1:
+            __M_writer('        <div id="toptranslations">\n            <h2>')
+            __M_writer(str(messages("Languages:")))
+            __M_writer('</h2>\n            ')
+            __M_writer(str(base.html_translations()))
+            __M_writer('\n        </div>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+"""
+__M_BEGIN_METADATA
+{"filename": "/Users/benoitclouet/.local/pipx/venvs/nikola/lib/python3.13/site-packages/nikola/data/themes/base/templates/base_header.tmpl", "uri": "base_header.tmpl", "source_encoding": "utf-8", "line_map": {"23": 2, "26": 0, "33": 2, "34": 16, "35": 28, "36": 39, "37": 62, "38": 71, "44": 4, "58": 4, "59": 6, "60": 6, "61": 7, "62": 7, "63": 8, "64": 8, "65": 9, "66": 10, "67": 11, "68": 11, "69": 14, "70": 15, "71": 15, "77": 18, "88": 18, "89": 19, "90": 19, "91": 19, "92": 19, "93": 20, "94": 21, "95": 21, "96": 21, "97": 21, "98": 21, "99": 23, "100": 24, "101": 25, "102": 25, "103": 25, "104": 27, "110": 30, "121": 30, "122": 33, "123": 33, "124": 34, "125": 34, "126": 35, "127": 35, "128": 36, "129": 36, "135": 41, "147": 41, "148": 42, "150": 43, "151": 44, "152": 44, "153": 44, "154": 46, "156": 47, "157": 48, "158": 48, "159": 48, "160": 48, "161": 48, "162": 48, "163": 48, "164": 49, "165": 50, "166": 50, "167": 50, "168": 50, "169": 50, "170": 53, "171": 54, "173": 55, "174": 56, "175": 56, "176": 56, "177": 56, "178": 56, "179": 56, "180": 56, "181": 57, "182": 58, "183": 58, "184": 58, "185": 58, "186": 58, "192": 64, "202": 64, "203": 65, "204": 66, "205": 67, "206": 67, "207": 68, "208": 68, "214": 208}}
+__M_END_METADATA
+"""
