@@ -260,15 +260,14 @@ Then check everything is detected correctly:
 
 
 
-Installation of TVM
+Installation of TVM and MLC-LLM
 ##################################################
 
-Now that the system part is working properly, install the TVM compiler following the instructions on this page https://llm.mlc.ai/docs/install/tvm.html#install-tvm-unity, ensuring you’re building from source. Instead of using TVM’s own repo, use mine (https://github.com/clouetb/tvm) as it has the twelve-lines patch I issued for enabling compilation targeting opencl processors like the mali G610 on the RK1. It’s not that big, but it won’t work without it. I’ll try to have it upstreamed when I have some free time, but since it was made using the crow bar programming technique, I guess it will require some polishing before actually submitting my pull request.
+Now that the system part is working properly, install the Unity TVM compiler following the instructions on this page https://llm.mlc.ai/docs/install/tvm.html#install-tvm-unity. Choose build from source ensuring you’re building from source. I did not use Conda but setup a virtual environment. Make sure you enable OpenCL by ensuring your config.cmake file contains the directive *set(USE_OPENCL ON)*.
 
-Installation of MLC-LLM
-##################################################
+Compilation of TVM can take a while, mine took roughly 30 minutes to compile. After compilation, the instwallable library is found in the *python* sub-directory. With the virtualenv activated, a simple *pip install .* should do the job.
 
-Install the https://llm.mlc.ai/docs/install/mlc_llm.html (again, building from source) but instead of using mlc-llm source repo, use mine again (https://github.com/clouetb/mlc-llm) as it has the rest of the patch for enabling compilation targeting opencl. Again, no upstreaming here for the moment, I’m too busy with only 24 hours-long days.
+Install the https://llm.mlc.ai/docs/install/mlc_llm.html again, building from source and answering yes when asked if you want to build MLC-LLM with OpenCL support. The installation procedure is the same as for TVM.
 
 Download the Llama 3 model
 ##################################################
