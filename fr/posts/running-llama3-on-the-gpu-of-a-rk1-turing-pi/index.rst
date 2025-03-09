@@ -263,9 +263,9 @@ Then check everything is detected correctly:
 Installation of TVM and MLC-LLM
 ##################################################
 
-Now that the system part is working properly, install the Unity TVM compiler following the instructions on this page https://llm.mlc.ai/docs/install/tvm.html#install-tvm-unity. Choose build from source ensuring you’re building from source. I did not use Conda but setup a virtual environment. Make sure you enable OpenCL by ensuring your config.cmake file contains the directive *set(USE_OPENCL ON)*.
+Now that the system part is working properly, install the Unity TVM compiler following the instructions on this page https://llm.mlc.ai/docs/install/tvm.html#install-tvm-unity. Choose build from source. I did not use Conda as presented but chose to setup a virtual environment. Make sure you enable OpenCL by adding  the directive *set(USE_OPENCL ON)* in your config.cmake file.
 
-Compilation of TVM can take a while, mine took roughly 30 minutes to compile. After compilation, the instwallable library is found in the *python* sub-directory. With the virtualenv activated, a simple *pip install .* should do the job.
+Compilation of TVM can take a while, mine took roughly 30 minutes to compile. After compilation, the installable library is found in the *python* sub-directory. With the virtualenv activated, a simple *pip install .* should do the job.
 
 Install the https://llm.mlc.ai/docs/install/mlc_llm.html again, building from source and answering yes when asked if you want to build MLC-LLM with OpenCL support. The installation procedure is the same as for TVM.
 
