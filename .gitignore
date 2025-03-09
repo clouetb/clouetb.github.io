@@ -1,3 +1,5 @@
 /.idea/
 /cache/.mako.tmp/
 /cache/posts/
+.doit.db
+/output/*
