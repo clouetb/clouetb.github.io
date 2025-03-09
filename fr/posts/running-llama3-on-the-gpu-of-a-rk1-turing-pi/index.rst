@@ -1,8 +1,8 @@
 .. title: Running llama3 on the GPU of a RK1 Turing Pi
 .. slug: running-llama3-on-the-gpu-of-a-rk1-turing-pi
 .. date: 2025-03-08 15:19:42 UTC+01:00
-.. tags: 
-.. category: 
+.. tags: AI programming hacking ARM RK3588 RK1
+.. category:
 .. link: 
 .. description: Llama3 runs well on an ARM GPU thanks to mlc-ai’s (https://mlc.ai/) approach. Performance is still modest but definitely decent. And there is much potential for improvement.
 .. type: text
